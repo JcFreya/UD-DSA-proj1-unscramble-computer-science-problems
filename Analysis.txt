@@ -1,0 +1,25 @@
+Run time analysis (Worst-Case Big-O Notation)
+Task0
+  Big O:
+  O(1) -- no matter how the input change, the execution is constant time
+
+Task1
+  Big O:
+  O(n) -- the execution time depends on the length of input files
+
+Task2
+  Big O:
+  O(nlogn) -- since using sorted() function here which has this complexity based on docs
+
+Task3
+Part A
+  Big O:
+  O(nlogn) -- since using sort() function which makes the complexity to nlogn
+
+Part B
+  Big O:
+  O(n) -- the complexity depends on length of input files
+
+Task4
+  Big O:
+  O(n) -- all for loops depend on the size of input files
