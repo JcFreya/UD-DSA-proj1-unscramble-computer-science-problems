@@ -47,19 +47,27 @@ The percentage should have 2 decimal digits
 
 # Part A
 # create list to save codes
+import re
 codes = []
 
 for r in calls:
     # check if the caller is from Bangalore
     if '(080)' in r[0]:
-        # check if the receiver is mobile number
-        if '(' in r[1]:
-            if r[1][1:4] not in codes:
-                codes.append(r[1][1:4])
         # check if the receiver is fixed number
+        if "(" in r[1]:
+            receiver_number = r[1]
+            # print(receiver_number)
+            start = receiver_number.find("(") + len("(")
+            end = receiver_number.find(")")
+            code = receiver_number[start:end]
+
+            if code not in codes:
+                codes.append(code)
+        # check if the receiver is mobile number
         elif r[1][0] in ['7','8','9']:
-            if r[1][0:4] not in codes:
-                codes.append(r[1][0:4])
+            prefix = r[1][0:4]
+            if prefix not in codes:
+                codes.append(prefix)
 
 # sort the list
 codes.sort()
@@ -83,7 +91,7 @@ for r in calls:
         if '(080)' in r[1]:
             cnt_receiver += 1
 
-pct = round(cnt_receiver/cnt_caller,2)
+pct = round(cnt_receiver/cnt_caller*100.00, 2)
 print("{} percent of calls from fixed lines in Bangalore are calls\
 to other fixed lines in Bangalore.".format(str(pct)))
 

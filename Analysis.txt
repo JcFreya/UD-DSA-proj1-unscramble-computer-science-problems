@@ -22,4 +22,5 @@ Part B
 
 Task4
   Big O:
-  O(n) -- all for loops depend on the size of input files
+  O(n) -- since the code contains three loops but since there's no subloop within it, it will still be o(n),
+all for loops depend on the size of input files

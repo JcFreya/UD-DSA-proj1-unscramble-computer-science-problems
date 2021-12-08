@@ -25,7 +25,7 @@ time_spent = {}
 for r in calls:
     # store the caller info
     number = r[0]
-    time = r[3]
+    time = int(r[3])
     if number in time_spent:
         time_spent[number] += time
     else:
@@ -33,14 +33,14 @@ for r in calls:
 
     # store the receiver info
     number = r[1]
-    time = r[3]
+    time = int(r[3])
     if number in time_spent:
         time_spent[number] += time
     else:
         time_spent[number] = time
 
 # print(time_spent)
-
+# print(time_spent.items())
 sorted_time = sorted(time_spent.items(), key=lambda item: item[1], reverse=True)
 # print(sorted_time)
 

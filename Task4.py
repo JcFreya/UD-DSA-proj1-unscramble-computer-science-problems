@@ -25,28 +25,32 @@ Print a message:
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
 
-calling_out = []
-texts_receiver = []
+make_calls = []
+send_receive_texts = []
+receive_calls = []
 telemarketers = []
 
 # store all number that sending or receiving the texts
+
 for r in texts:
-    if r[0] not in texts_receiver:
-        texts_receiver.append(r[0])
-    if r[1] not in texts_receiver:
-        texts_receiver.append(r[1])
+    if r[0] not in send_receive_texts:
+        send_receive_texts.append(r[0])
+    if r[1] not in send_receive_texts:
+        send_receive_texts.append(r[1])
 
 # store all calling out number and receiver numbers
 for r in calls:
-    if r[0] not in calling_out:
-        calling_out.append(r[0])
-    if r[1] not in texts_receiver:
-        calling_out.append(r[1])
+    if r[0] not in make_calls:
+        make_calls.append(r[0])
+    if r[1] not in receive_calls:
+        receive_calls.append(r[1])
 
 # check if number in calling_out not in texts_receiver, save it to telemarketers
-for number in calling_out:
-    if number not in texts_receiver:
+for number in make_calls:
+    if (number not in send_receive_texts) & (number not in receive_calls):
         telemarketers.append(number)
+
+telemarketers.sort()
 
 print("These numbers could be telemarketers: \n")
 for number in telemarketers:
