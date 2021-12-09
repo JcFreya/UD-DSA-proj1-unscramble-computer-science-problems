@@ -75,10 +75,6 @@ print("The numbers called by people in Bangalore have codes:\n ")
 for code in codes:
     print(code)
 
-"""
-Big O:
-O(nlogn) -- since using sort() function which makes the complexity to nlogn
-"""
 
 # Part B
 cnt_caller = 0
@@ -96,6 +92,6 @@ print("{} percent of calls from fixed lines in Bangalore are calls\
 to other fixed lines in Bangalore.".format(str(pct)))
 
 """
-Big O:
-O(n) -- the complexity depends on length of input files
+Suggestion:
+The code can be further optimized using sets that store unique numbers so we don't need to check for duplicates.
 """

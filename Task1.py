@@ -40,6 +40,14 @@ cnt = len(numbers)
 print("There are {} different telephone numbers in the records.".format(str(cnt)))
 
 """
-Big O:
-O(n) -- the execution time depends on the length of input files
+Option2:
+Using sets
+unique_tele_nums = set()
+for call in calls:
+    unique_tele_nums.add(call[0])
+    unique_tele_nums.add(call[1])
+for call in texts:
+    unique_tele_nums.add(call[0])
+    unique_tele_nums.add(call[1])
+cnt = len(unique_tele_nums)
 """

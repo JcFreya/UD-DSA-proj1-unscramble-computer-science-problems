@@ -57,6 +57,21 @@ for number in telemarketers:
     print(number)
 
 """
-Big O:
-O(n) -- all for loops depend on the size of input files
+Suggestion:
+outgoing = set()
+non_tele = set()
+
+for call in calls:
+    outgoing.add(call[0])
+    non_tele.add(call[1])
+
+for call in texts:
+    non_tele.add(call[0])
+    non_tele.add(call[1])
+
+# subtract all non_tele number from outgoing
+tele = outgoing.difference(non_tele)
+
+# display the result line by line in sorted order
+
 """

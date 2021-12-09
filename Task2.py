@@ -51,6 +51,15 @@ print("{} spent the longest time, {} seconds, on the phone during\
 September 2016.".format(longest_number, longest_time))
 
 """
-Big O:
-O(nlogn) -- since using sorted() function here which has this complexity based on docs
+Suggestion:
+can utilize the .get() method to optimize code.
+To get the longest/maximum time spent, can also use the max() built-in function instead of sorted().
+This will reduce the overall worst-case time complexity to O(n).
+
+for call in calls:
+    time_spent[call[0]] = time_spent.get(call[0],0) + int(call[3])
+    time_spent[call[1]] = time_spent.get(call[1],0) + int(call[3])
+
+longest_number = max(time_spent, key=lambda k: time_spent[k])
+longest_time =time_spent[longest_number]
 """

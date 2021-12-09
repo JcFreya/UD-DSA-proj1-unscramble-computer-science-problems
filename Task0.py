@@ -28,6 +28,7 @@ incoming_number, answering_number, time, duration  = calls[-1]
 print("Last record of calls, {} calls {} at time {}, lasting {} seconds".format(incoming_number, answering_number, time, duration))
 
 """
-Big O:
-O(1) -- no matter how the input change, the execution is constant time
+Option2:
+print('First record of texts, {0} texts {1} at time {2}'.format(*texts[0]))
+print('Last record of calls, {0} calls {1} at time {2}, lasting {3} seconds'.format(*calls[-1]))
 """

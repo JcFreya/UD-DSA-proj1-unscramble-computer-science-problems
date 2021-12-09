@@ -5,7 +5,7 @@ Task0
 
 Task1
   Big O:
-  O(n) -- the execution time depends on the length of input files
+  O(n^2) -- since it's using lists an lookup time in/not in lists/array in linear, so that the worst-case time complexity will be O(n^2)
 
 Task2
   Big O:
@@ -14,7 +14,8 @@ Task2
 Task3
 Part A
   Big O:
-  O(nlogn) -- since using sort() function which makes the complexity to nlogn
+  O(n^2) --  sort() function makes the complexity to nlogn, but since it's using lookup in/not in a list/array in linear,
+  which the worst-case time complexity will be O(n^2). Since O(n^2) is greater than O(n logn), the worst-case time complexity will be O(n^2)
 
 Part B
   Big O:
@@ -22,5 +23,5 @@ Part B
 
 Task4
   Big O:
-  O(n) -- since the code contains three loops but since there's no subloop within it, it will still be o(n),
-all for loops depend on the size of input files
+  O(n^2) -- since it's using lookup in/not in a list/array in linear, adding the outer for loop,
+  which the worst-case time complexity will be O(n^2)
